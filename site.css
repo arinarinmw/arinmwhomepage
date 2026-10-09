@@ -468,41 +468,99 @@ button:focus-visible {
 
 /* Speaking topics */
 
-.topic-grid {
+.topic-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
-  gap: var(--space-2);
+  gap: 10px;
 }
 
-.topic-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
+.topic-item {
   background: var(--surface);
-  border-radius: var(--radius-lg);
-  padding: var(--space-3);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
 }
 
+.topic-item summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  list-style: none;
+}
+
+.topic-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.topic-item summary:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 3px;
+}
+
 .topic-number {
+  flex-shrink: 0;
+  width: 24px;
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   color: var(--accent-strong);
+}
+
+.topic-head {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .topic-title {
-  font-size: 19px;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .topic-subtitle {
-  margin-top: -6px;
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 500;
+  line-height: 1.5;
   color: var(--accent-strong);
+}
+
+.topic-toggle {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 200ms ease;
+}
+
+.topic-toggle svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 200ms ease;
+}
+
+.topic-item summary:hover .topic-toggle {
+  background: #ffffff;
+}
+
+.topic-item[open] .topic-toggle svg {
+  transform: rotate(180deg);
+}
+
+.topic-body {
+  display: grid;
+  gap: 12px;
+  padding: 0 18px 18px 58px;
 }
 
 .topic-desc {
@@ -513,7 +571,6 @@ button:focus-visible {
 }
 
 .topic-takeaway {
-  margin-top: auto;
   padding: 12px 14px;
   border-radius: var(--radius-md);
   background: rgba(247, 242, 236, 0.6);
@@ -993,11 +1050,9 @@ button:focus-visible {
 
 .course-badge {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
   height: 100%;
-  min-height: 102px;
-  padding: 14px 16px;
+  overflow: hidden;
   background: var(--surface);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
@@ -1014,18 +1069,22 @@ button:focus-visible {
   transform: scale(0.98);
 }
 
-.course-badge > svg {
-  color: var(--accent);
-  flex-shrink: 0;
-  width: 22px;
-  height: 22px;
+.course-badge-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--surface-hover);
 }
 
 .course-badge-text {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 2px;
   min-width: 0;
+  padding: 12px 16px 14px;
 }
 
 .course-badge-title {
@@ -1044,7 +1103,8 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  margin-top: 4px;
+  margin-top: auto;
+  padding-top: 6px;
   font-size: 13px;
   font-weight: 600;
   color: var(--accent-strong);
@@ -1103,5 +1163,14 @@ button:focus-visible {
 
   .hero-actions .btn {
     width: 100%;
+  }
+
+  .topic-item summary {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .topic-body {
+    padding: 0 14px 16px;
   }
 }

@@ -60,7 +60,8 @@ img {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-display);
   color: var(--text);
   font-weight: 600;
@@ -197,6 +198,11 @@ button:focus-visible {
   justify-content: center;
   gap: var(--space-2);
   margin-top: var(--space-4);
+}
+
+.hero-actions .btn {
+  font-size: 15px;
+  padding: 12px 20px;
 }
 
 .hero-actions .btn-primary {
@@ -431,6 +437,35 @@ button:focus-visible {
   margin: 0 auto var(--space-3);
 }
 
+/* Homepage parts: each groups related sections */
+
+.part {
+  margin-bottom: var(--space-6);
+}
+
+.part--divided {
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--hairline);
+}
+
+.part-heading {
+  font-size: clamp(26px, 3.4vw, 30px);
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+
+.part .section-block {
+  margin: var(--space-6) 0 0;
+}
+
+.part > .section-intro + .section-block {
+  margin-top: var(--space-5);
+}
+
+.part .section-heading {
+  font-size: 20px;
+}
+
 /* Speaking topics */
 
 .topic-grid {
@@ -518,7 +553,7 @@ button:focus-visible {
   box-shadow: var(--shadow-card);
 }
 
-.format-card h3 {
+.format-card h4 {
   font-size: 17px;
 }
 
@@ -542,7 +577,7 @@ button:focus-visible {
   padding: var(--space-3);
 }
 
-.session-note h3 {
+.session-note h4 {
   font-size: 16px;
   margin-bottom: var(--space-1);
 }
@@ -895,5 +930,14 @@ button:focus-visible {
 
   .contact-card {
     padding: var(--space-4) var(--space-3);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
   }
 }

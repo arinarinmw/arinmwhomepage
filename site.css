@@ -95,9 +95,57 @@ button:focus-visible {
 }
 
 .page {
+  position: relative;
   max-width: 760px;
   margin: 0 auto;
   padding: var(--space-5) var(--space-3) var(--space-6);
+}
+
+/* Language switch (EN / TH) */
+
+html[lang="en"] [data-lang="th"],
+html[lang="th"] [data-lang="en"] {
+  display: none !important;
+}
+
+.lang-toggle {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-3);
+  display: inline-flex;
+  padding: 3px;
+  border-radius: var(--radius-full);
+  background: var(--surface);
+}
+
+.lang-toggle button {
+  min-height: 34px;
+  padding: 6px 14px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.lang-toggle button[aria-pressed="true"] {
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+
+.lang-toggle button:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+html[lang="th"] .topic-takeaway-label {
+  letter-spacing: 0;
+  font-size: 13px;
 }
 
 .page-narrow {
@@ -1171,6 +1219,15 @@ button:focus-visible {
 
   .contact-card {
     padding: var(--space-4) var(--space-3);
+  }
+
+  .lang-toggle {
+    top: 12px;
+    right: var(--space-2);
+  }
+
+  .lang-toggle + .hero {
+    padding-top: 28px;
   }
 
   .hero-actions {

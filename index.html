@@ -4,6 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Arin Muadthong | Speaker · Educator · Product &amp; Systems Thinker</title>
+<script>
+  (function () {
+    try {
+      var p = new URLSearchParams(location.search).get('lang');
+      var l = (p === 'th' || p === 'en') ? p : localStorage.getItem('arinmw-lang');
+      if (l === 'th') document.documentElement.lang = 'th';
+    } catch (e) {}
+  })();
+</script>
 <meta name="description" content="Arin Muadthong — Speaker, Educator, Product &amp; Systems Thinker. Making complex work clearer. Turning ideas into practical next steps." />
 <meta property="og:title" content="อรินจ์ หมวดทอง | Arin Muadthong" />
 <meta property="og:description" content="Speaker · Educator · Product &amp; Systems Thinker. Making complex work clearer. Turning ideas into practical next steps." />
@@ -20,14 +29,20 @@
 <body>
 <div class="page">
 
+  <div class="lang-toggle" role="group" aria-label="Language / ภาษา">
+    <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-set-lang="th" aria-pressed="false">TH</button>
+  </div>
+
   <header class="hero">
     <p class="eyebrow">arin.arinmw</p>
-    <img class="avatar" src="Media/Profile%20final%20with%20circle.jpg" alt="Profile photo of Arin Muadthong" />
-    <h1>Arin Muadthong</h1>
-    <p class="hero-thai-name" lang="th">อรินจ์ หมวดทอง</p>
-    <p class="hero-role">Speaker · Educator · Product &amp; Systems Thinker</p>
-    <p class="hero-tagline">Making complex work clearer.<br>Turning ideas into practical next steps.</p>
+    <img class="avatar" src="Media/Profile%20final%20with%20circle.jpg" alt="Profile photo of Arin Muadthong" data-alt-th="รูปโปรไฟล์ของอรินจ์ หมวดทอง" />
+    <h1><span data-lang="en">Arin Muadthong</span><span data-lang="th">อรินจ์ หมวดทอง</span></h1>
+    <p class="hero-thai-name"><span data-lang="en" lang="th">อรินจ์ หมวดทอง</span><span data-lang="th" lang="en">Arin Muadthong</span></p>
+    <p class="hero-role"><span data-lang="en">Speaker · Educator · Product &amp; Systems Thinker</span><span data-lang="th">วิทยากร · ผู้สอน · Product &amp; Systems Thinker</span></p>
+    <p class="hero-tagline"><span data-lang="en">Making complex work clearer.<br>Turning ideas into practical next steps.</span><span data-lang="th">ทำเรื่องงานที่ซับซ้อนให้เข้าใจง่ายขึ้น<br>เปลี่ยนไอเดียให้เป็นก้าวต่อไปที่ทำได้จริง</span></p>
     <div class="hero-bio">
+      <div data-lang="en">
       <p>
         Arin brings more than 10 years of experience in IT consulting, business analysis, and product development
         across consulting, banking, and startup environments. Her background includes IBM Consulting,
@@ -39,12 +54,25 @@
         and practical questions. Her sessions help people understand the context behind problems, explore
         possibilities, and make more informed decisions about their work and what they want to create next.
       </p>
+      </div>
+      <div data-lang="th">
+      <p>
+        Arin มีประสบการณ์มากกว่า 10 ปีในงาน IT Consulting, Business Analysis และการพัฒนาโปรดักต์
+        ทั้งในบริษัทที่ปรึกษา ธนาคาร และสตาร์ทอัพ เคยร่วมงานกับ IBM Consulting, PwC SEA Consulting
+        และ Krungsri Nimble รวมถึงมีประสบการณ์ร่วมก่อตั้งธุรกิจและสร้างโปรดักต์ดิจิทัลด้วยตัวเอง
+      </p>
+      <p>
+        Arin ถ่ายทอดบทเรียนจากการทำงานจริงผ่านการบรรยาย การสอน และการสร้างคอนเทนต์ ให้กลายเป็นแนวคิดที่เข้าใจง่าย
+        และคำถามที่นำไปใช้ได้จริง เซสชันของ Arin ช่วยให้ผู้ฟังเข้าใจบริบทเบื้องหลังปัญหา มองเห็นความเป็นไปได้ใหม่ ๆ
+        และตัดสินใจเรื่องงานรวมถึงสิ่งที่อยากสร้างต่อไปได้อย่างรอบด้านมากขึ้น
+      </p>
+      </div>
     </div>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#speaking-topics">Speaking &amp; Training Topics</a>
-      <a class="btn btn-outline" href="#in-action">Arin in Action</a>
-      <a class="btn btn-outline" href="#profile">Professional Profile</a>
-      <a class="btn btn-outline" href="#contact">Let’s Discuss</a>
+      <a class="btn btn-primary" href="#speaking-topics"><span data-lang="en">Speaking &amp; Training Topics</span><span data-lang="th">หัวข้อบรรยายและอบรม</span></a>
+      <a class="btn btn-outline" href="#in-action"><span data-lang="en">Arin in Action</span><span data-lang="th">ตัวอย่างผลงาน</span></a>
+      <a class="btn btn-outline" href="#profile"><span data-lang="en">Professional Profile</span><span data-lang="th">โปรไฟล์และประสบการณ์</span></a>
+      <a class="btn btn-outline" href="#contact"><span data-lang="en">Let’s Discuss</span><span data-lang="th">ติดต่อพูดคุย</span></a>
     </div>
   </header>
 
@@ -52,11 +80,15 @@
 
     <!-- Speaking topics -->
     <section class="part" id="speaking-topics" aria-labelledby="topics-heading">
-      <h2 id="topics-heading" class="part-heading">Speaking &amp; Training Topics</h2>
-      <p class="section-intro">
+      <h2 id="topics-heading" class="part-heading"><span data-lang="en">Speaking &amp; Training Topics</span><span data-lang="th">หัวข้อบรรยายและอบรม</span></h2>
+      <p class="section-intro" data-lang="en">
         Drawing on experience across consulting, product development, and teaching, Arin explores how people
         understand work, solve problems, and turn ideas into action. The topics below offer starting points for
         a session tailored to your audience and event goals.
+      </p>
+      <p class="section-intro" data-lang="th">
+        จากประสบการณ์ทั้งงานที่ปรึกษา การพัฒนาโปรดักต์ และการสอน Arin ชวนผู้ฟังสำรวจว่าเราเข้าใจงาน แก้ปัญหา
+        และเปลี่ยนไอเดียให้เป็นการลงมือทำได้อย่างไร หัวข้อด้านล่างเป็นจุดเริ่มต้นที่ปรับให้เหมาะกับผู้ฟังและเป้าหมายของงานได้
       </p>
       <ol class="topic-list">
 
@@ -66,13 +98,13 @@
               <span class="topic-number" aria-hidden="true">01</span>
               <span class="topic-head">
                 <span class="topic-title">Design Thinking</span>
-                <span class="topic-subtitle">Understanding People, Framing Problems</span>
+                <span class="topic-subtitle"><span data-lang="en">Understanding People, Framing Problems</span><span data-lang="th">เข้าใจคน ตั้งโจทย์ให้ถูก</span></span>
               </span>
               <span class="topic-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </summary>
             <div class="topic-body">
-              <p class="topic-desc">Understand real needs, challenge assumptions and test possible solutions.</p>
-              <p class="topic-takeaway"><span class="topic-takeaway-label">Takeaway</span>A clearer problem and a prototype to test.</p>
+              <p class="topic-desc"><span data-lang="en">Understand real needs, challenge assumptions and test possible solutions.</span><span data-lang="th">เข้าใจความต้องการที่แท้จริง ตั้งคำถามกับสมมติฐาน และทดสอบทางออกที่เป็นไปได้</span></p>
+              <p class="topic-takeaway"><span class="topic-takeaway-label"><span data-lang="en">Takeaway</span><span data-lang="th">สิ่งที่ได้รับ</span></span><span data-lang="en">A clearer problem and a prototype to test.</span><span data-lang="th">โจทย์ที่ชัดเจนขึ้น พร้อมต้นแบบ (prototype) สำหรับทดสอบ</span></p>
             </div>
           </details>
         </li>
@@ -83,13 +115,13 @@
               <span class="topic-number" aria-hidden="true">02</span>
               <span class="topic-head">
                 <span class="topic-title">Agile Experimentation</span>
-                <span class="topic-subtitle">Making Progress Under Uncertainty</span>
+                <span class="topic-subtitle"><span data-lang="en">Making Progress Under Uncertainty</span><span data-lang="th">เดินหน้าได้แม้ในความไม่แน่นอน</span></span>
               </span>
               <span class="topic-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </summary>
             <div class="topic-body">
-              <p class="topic-desc">Prioritize, work in small steps and adapt through feedback.</p>
-              <p class="topic-takeaway"><span class="topic-takeaway-label">Takeaway</span>A short-cycle plan and clear review points.</p>
+              <p class="topic-desc"><span data-lang="en">Prioritize, work in small steps and adapt through feedback.</span><span data-lang="th">จัดลำดับความสำคัญ ทำทีละก้าวเล็ก ๆ และปรับตัวจาก feedback</span></p>
+              <p class="topic-takeaway"><span class="topic-takeaway-label"><span data-lang="en">Takeaway</span><span data-lang="th">สิ่งที่ได้รับ</span></span><span data-lang="en">A short-cycle plan and clear review points.</span><span data-lang="th">แผนงานแบบรอบสั้น พร้อมจุดทบทวนที่ชัดเจน</span></p>
             </div>
           </details>
         </li>
@@ -100,13 +132,13 @@
               <span class="topic-number" aria-hidden="true">03</span>
               <span class="topic-head">
                 <span class="topic-title">AI as an Enabler</span>
-                <span class="topic-subtitle">Designing Better Workflows</span>
+                <span class="topic-subtitle"><span data-lang="en">Designing Better Workflows</span><span data-lang="th">ออกแบบ workflow ให้ดีขึ้น</span></span>
               </span>
               <span class="topic-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </summary>
             <div class="topic-body">
-              <p class="topic-desc">Identify where AI can help, define human roles and check results.</p>
-              <p class="topic-takeaway"><span class="topic-takeaway-label">Takeaway</span>A practical workflow for a real task.</p>
+              <p class="topic-desc"><span data-lang="en">Identify where AI can help, define human roles and check results.</span><span data-lang="th">หาจุดที่ AI ช่วยได้ กำหนดบทบาทของคน และตรวจสอบผลลัพธ์</span></p>
+              <p class="topic-takeaway"><span class="topic-takeaway-label"><span data-lang="en">Takeaway</span><span data-lang="th">สิ่งที่ได้รับ</span></span><span data-lang="en">A practical workflow for a real task.</span><span data-lang="th">Workflow ที่ใช้ได้จริงกับงานจริง</span></p>
             </div>
           </details>
         </li>
@@ -115,10 +147,14 @@
 
     <!-- Session formats -->
     <section class="section-block" id="sessions" aria-labelledby="sessions-heading">
-      <h3 id="sessions-heading" class="section-heading">Formats &amp; Audiences</h3>
-      <p class="section-intro">
+      <h3 id="sessions-heading" class="section-heading"><span data-lang="en">Formats &amp; Audiences</span><span data-lang="th">รูปแบบและกลุ่มผู้ฟัง</span></h3>
+      <p class="section-intro" data-lang="en">
         Arin combines stories from real projects with clear explanations, reflection prompts, and discussion.
         Sessions can be adapted to the audience’s experience, the context of their work, and the purpose of the event.
+      </p>
+      <p class="section-intro" data-lang="th">
+        Arin ผสมผสานเรื่องเล่าจากโปรเจกต์จริงเข้ากับคำอธิบายที่ชัดเจน คำถามชวนคิด และการพูดคุยแลกเปลี่ยน
+        โดยปรับเนื้อหาให้เหมาะกับประสบการณ์ของผู้ฟัง บริบทการทำงาน และวัตถุประสงค์ของงาน
       </p>
       <ul class="format-grid">
 
@@ -126,49 +162,50 @@
           <div class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 256 256" fill="none"><rect x="96" y="32" width="64" height="112" rx="32" stroke="currentColor" stroke-width="14"/><path d="M64 120a64 64 0 0 0 128 0M128 184v40M96 224h64" stroke="currentColor" stroke-width="14" stroke-linecap="round"/></svg>
           </div>
-          <h4>Talks &amp; Q&amp;A</h4>
-          <p>Accessible talks that connect real experiences with practical ideas, followed by space for questions and discussion.</p>
+          <h4><span data-lang="en">Talks &amp; Q&amp;A</span><span data-lang="th">บรรยายและถาม-ตอบ</span></h4>
+          <p><span data-lang="en">Accessible talks that connect real experiences with practical ideas, followed by space for questions and discussion.</span><span data-lang="th">การบรรยายที่เข้าใจง่าย เชื่อมประสบการณ์จริงเข้ากับแนวคิดที่ใช้ได้จริง พร้อมช่วงถาม-ตอบและพูดคุย</span></p>
         </li>
 
         <li class="format-card">
           <div class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 256 256" fill="none"><circle cx="80" cy="96" r="32" stroke="currentColor" stroke-width="14"/><circle cx="176" cy="96" r="32" stroke="currentColor" stroke-width="14"/><path d="M24 208c0-32 24-56 56-56s56 24 56 56M120 208c0-32 24-56 56-56s56 24 56 56" stroke="currentColor" stroke-width="14" stroke-linecap="round"/></svg>
           </div>
-          <h4>Panel Discussions</h4>
-          <p>Perspectives from consulting, product development, and teaching to support conversations about work, people, and technology.</p>
+          <h4><span data-lang="en">Panel Discussions</span><span data-lang="th">เสวนา (Panel Discussion)</span></h4>
+          <p><span data-lang="en">Perspectives from consulting, product development, and teaching to support conversations about work, people, and technology.</span><span data-lang="th">มุมมองจากงานที่ปรึกษา การพัฒนาโปรดักต์ และการสอน เพื่อร่วมพูดคุยเรื่องงาน คน และเทคโนโลยี</span></p>
         </li>
 
         <li class="format-card">
           <div class="card-icon" aria-hidden="true">
             <svg viewBox="0 0 256 256" fill="none"><rect x="40" y="40" width="72" height="72" rx="12" stroke="currentColor" stroke-width="14"/><rect x="144" y="40" width="72" height="72" rx="12" stroke="currentColor" stroke-width="14"/><rect x="40" y="144" width="72" height="72" rx="12" stroke="currentColor" stroke-width="14"/><path d="M180 148v64M148 180h64" stroke="currentColor" stroke-width="14" stroke-linecap="round"/></svg>
           </div>
-          <h4>Small Group Workshops</h4>
-          <p>Guided reflection and case-based activities that help participants examine a question and identify practical next steps.</p>
+          <h4><span data-lang="en">Small Group Workshops</span><span data-lang="th">เวิร์กช็อปกลุ่มเล็ก</span></h4>
+          <p><span data-lang="en">Guided reflection and case-based activities that help participants examine a question and identify practical next steps.</span><span data-lang="th">กิจกรรมชวนคิดและกรณีศึกษา ที่ช่วยให้ผู้เข้าร่วมสำรวจคำถามและหาก้าวต่อไปที่ทำได้จริง</span></p>
         </li>
 
       </ul>
 
       <div class="session-notes">
         <div class="session-note">
-          <h4>Who the sessions are for</h4>
-          <p>Employees and teams navigating complex work, people collaborating across functions, HR and L&amp;D teams designing learning opportunities, and university students preparing to enter the workplace.</p>
+          <h4><span data-lang="en">Who the sessions are for</span><span data-lang="th">เหมาะสำหรับใคร</span></h4>
+          <p><span data-lang="en">Employees and teams navigating complex work, people collaborating across functions, HR and L&amp;D teams designing learning opportunities, and university students preparing to enter the workplace.</span><span data-lang="th">พนักงานและทีมที่ต้องรับมือกับงานซับซ้อน คนที่ทำงานร่วมกันข้ามฝ่าย ทีม HR และ L&amp;D ที่ออกแบบการเรียนรู้ในองค์กร และนักศึกษาที่กำลังเตรียมตัวเข้าสู่โลกการทำงาน</span></p>
         </div>
         <div class="session-note">
-          <h4>Experience behind the learning</h4>
-          <p>Arin’s teaching and facilitation experience includes university guest sessions, corporate and project workshops, and online courses published on SkillLane and Udemy.</p>
+          <h4><span data-lang="en">Experience behind the learning</span><span data-lang="th">ประสบการณ์ด้านการสอน</span></h4>
+          <p><span data-lang="en">Arin’s teaching and facilitation experience includes university guest sessions, corporate and project workshops, and online courses published on SkillLane and Udemy.</span><span data-lang="th">ประสบการณ์การสอนและ facilitation ของ Arin ครอบคลุมการบรรยายรับเชิญในมหาวิทยาลัย เวิร์กช็อปในองค์กรและโปรเจกต์ และคอร์สออนไลน์บน SkillLane และ Udemy</span></p>
         </div>
       </div>
     </section>
 
     <!-- Arin in action -->
     <section class="section-block" id="in-action" aria-labelledby="in-action-heading">
-      <h3 id="in-action-heading" class="section-heading">Arin in Action</h3>
-      <p class="section-intro">Get a feel for Arin’s sessions through highlights from her YouTube channel, nobuglife by Arin MW, and recent campus visits.</p>
+      <h3 id="in-action-heading" class="section-heading"><span data-lang="en">Arin in Action</span><span data-lang="th">ตัวอย่างผลงาน</span></h3>
+      <p class="section-intro" data-lang="en">Get a feel for Arin’s sessions through highlights from her YouTube channel, nobuglife by Arin MW, and recent campus visits.</p>
+      <p class="section-intro" data-lang="th">สัมผัสบรรยากาศการบรรยายของ Arin ผ่านคลิปไฮไลต์จากช่อง YouTube nobuglife by Arin MW และภาพจากการไปบรรยายที่มหาวิทยาลัย</p>
 
-      <h4 class="gallery-sub">Video Highlights</h4>
+      <h4 class="gallery-sub"><span data-lang="en">Video Highlights</span><span data-lang="th">วิดีโอไฮไลต์</span></h4>
       <div class="video-feature">
           <div class="video-card video-card--feature">
-            <button type="button" class="video-thumb" data-video-id="yoisX2AFEGE" data-video-title="AI ไปไกลมาก..ถึงตาเราตอบคำถามตัวเองได้แล้ว | JUBJIB MVP 1.1?" aria-label="Play video (8:16): AI ไปไกลมาก..ถึงตาเราตอบคำถามตัวเองได้แล้ว | JUBJIB MVP 1.1?">
+            <button type="button" class="video-thumb" data-video-id="yoisX2AFEGE" data-video-title="AI ไปไกลมาก..ถึงตาเราตอบคำถามตัวเองได้แล้ว | JUBJIB MVP 1.1?" aria-label="Play video (8:16): AI ไปไกลมาก..ถึงตาเราตอบคำถามตัวเองได้แล้ว | JUBJIB MVP 1.1?" data-aria-label-th="เล่นวิดีโอ (8:16): AI ไปไกลมาก..ถึงตาเราตอบคำถามตัวเองได้แล้ว | JUBJIB MVP 1.1?">
               <img src="https://i.ytimg.com/vi/yoisX2AFEGE/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" />
               <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
               <span class="video-duration" aria-hidden="true">8:16</span>
@@ -177,7 +214,7 @@
           </div>
         <div class="video-grid">
           <div class="video-card">
-            <button type="button" class="video-thumb" data-video-id="woGTyKNZybU" data-video-title="เปลี่ยน AI เป็น เพื่อนคู่คิด | How I use AI as my Thinking Partner 🤝" aria-label="Play video (14:54): เปลี่ยน AI เป็น เพื่อนคู่คิด | How I use AI as my Thinking Partner 🤝">
+            <button type="button" class="video-thumb" data-video-id="woGTyKNZybU" data-video-title="เปลี่ยน AI เป็น เพื่อนคู่คิด | How I use AI as my Thinking Partner 🤝" aria-label="Play video (14:54): เปลี่ยน AI เป็น เพื่อนคู่คิด | How I use AI as my Thinking Partner 🤝" data-aria-label-th="เล่นวิดีโอ (14:54): เปลี่ยน AI เป็น เพื่อนคู่คิด | How I use AI as my Thinking Partner 🤝">
               <img src="https://i.ytimg.com/vi/woGTyKNZybU/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" />
               <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
               <span class="video-duration" aria-hidden="true">14:54</span>
@@ -185,7 +222,7 @@
             <a class="video-title" lang="th" href="https://www.youtube.com/watch?v=woGTyKNZybU" target="_blank" rel="noopener">เปลี่ยน AI เป็น เพื่อนคู่คิด | How I use AI as my Thinking Partner 🤝</a>
           </div>
           <div class="video-card">
-            <button type="button" class="video-thumb" data-video-id="nLcWvX9TeGc" data-video-title="เมื่อ career break กลายเป็นสนามทดลอง | Life after IT consulting 🤎" aria-label="Play video (9:14): เมื่อ career break กลายเป็นสนามทดลอง | Life after IT consulting 🤎">
+            <button type="button" class="video-thumb" data-video-id="nLcWvX9TeGc" data-video-title="เมื่อ career break กลายเป็นสนามทดลอง | Life after IT consulting 🤎" aria-label="Play video (9:14): เมื่อ career break กลายเป็นสนามทดลอง | Life after IT consulting 🤎" data-aria-label-th="เล่นวิดีโอ (9:14): เมื่อ career break กลายเป็นสนามทดลอง | Life after IT consulting 🤎">
               <img src="https://i.ytimg.com/vi/nLcWvX9TeGc/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy" />
               <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l12.5-7.5z"/></svg></span>
               <span class="video-duration" aria-hidden="true">9:14</span>
@@ -195,30 +232,30 @@
         </div>
       </div>
 
-      <h4 class="gallery-sub">Campus Visits</h4>
+      <h4 class="gallery-sub"><span data-lang="en">Campus Visits</span><span data-lang="th">บรรยายในมหาวิทยาลัย</span></h4>
       <ul class="photo-grid">
         <li>
           <figure>
-            <img src="Media/campus/kmitl-speaking.jpg" alt="Arin speaking with a microphone in front of a presentation slide at KMITL" width="1000" height="750" loading="lazy" decoding="async" />
-            <figcaption><strong>King Mongkut’s Institute of Technology Ladkrabang</strong><span lang="th">Debug Your Career Before It Debugs You: ชีวิตการทำงานที่ไม่มีสอนในตำรา</span> · <span class="nowrap">February 2026</span></figcaption>
+            <img src="Media/campus/kmitl-speaking.jpg" alt="Arin speaking with a microphone in front of a presentation slide at KMITL" data-alt-th="Arin ถือไมโครโฟนบรรยายหน้าสไลด์ที่ สจล." width="1000" height="750" loading="lazy" decoding="async" />
+            <figcaption><div data-lang="en"><strong>King Mongkut’s Institute of Technology Ladkrabang</strong><span lang="th">Debug Your Career Before It Debugs You: ชีวิตการทำงานที่ไม่มีสอนในตำรา</span> · <span class="nowrap">February 2026</span></div><div data-lang="th"><strong>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</strong>Debug Your Career Before It Debugs You: ชีวิตการทำงานที่ไม่มีสอนในตำรา · <span class="nowrap">กุมภาพันธ์ 2569</span></div></figcaption>
           </figure>
         </li>
         <li>
           <figure>
-            <img src="Media/campus/kmitl-students.jpg" alt="Arin standing with a full room of students at KMITL, everyone making peace signs" width="1000" height="750" loading="lazy" decoding="async" />
-            <figcaption><strong>King Mongkut’s Institute of Technology Ladkrabang</strong>With students after the session · <span class="nowrap">February 2026</span></figcaption>
+            <img src="Media/campus/kmitl-students.jpg" alt="Arin standing with a full room of students at KMITL, everyone making peace signs" data-alt-th="Arin ถ่ายรูปร่วมกับนักศึกษาเต็มห้องที่ สจล." width="1000" height="750" loading="lazy" decoding="async" />
+            <figcaption><div data-lang="en"><strong>King Mongkut’s Institute of Technology Ladkrabang</strong>With students after the session · <span class="nowrap">February 2026</span></div><div data-lang="th"><strong>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</strong>ถ่ายรูปร่วมกับนักศึกษาหลังจบการบรรยาย · <span class="nowrap">กุมภาพันธ์ 2569</span></div></figcaption>
           </figure>
         </li>
         <li>
           <figure>
-            <img src="Media/campus/chula-design-thinking.jpg" alt="Students in a lecture hall at Chulalongkorn University during Arin’s session" width="1000" height="750" loading="lazy" decoding="async" />
-            <figcaption><strong>Chulalongkorn University</strong>Design Thinking Workshop for students · <span class="nowrap">April 2023</span></figcaption>
+            <img src="Media/campus/chula-design-thinking.jpg" alt="Students in a lecture hall at Chulalongkorn University during Arin’s session" data-alt-th="นักศึกษาในห้องบรรยายที่จุฬาลงกรณ์มหาวิทยาลัยระหว่างการบรรยายของ Arin" width="1000" height="750" loading="lazy" decoding="async" />
+            <figcaption><div data-lang="en"><strong>Chulalongkorn University</strong>Design Thinking Workshop for students · <span class="nowrap">April 2023</span></div><div data-lang="th"><strong>จุฬาลงกรณ์มหาวิทยาลัย</strong>Design Thinking Workshop สำหรับนักศึกษา · <span class="nowrap">เมษายน 2566</span></div></figcaption>
           </figure>
         </li>
         <li>
           <figure>
-            <img src="Media/campus/chandrakasem-online.jpg" alt="Video call with Arin and students from Chandrakasem Rajabhat University" width="1000" height="750" loading="lazy" decoding="async" />
-            <figcaption><strong>Chandrakasem Rajabhat University</strong><span lang="th">ชีวิตการทำงานที่ไม่มีสอนในตำรา</span> · Online session · <span class="nowrap">March 2026</span></figcaption>
+            <img src="Media/campus/chandrakasem-online.jpg" alt="Video call with Arin and students from Chandrakasem Rajabhat University" data-alt-th="การประชุมออนไลน์ระหว่าง Arin และนักศึกษามหาวิทยาลัยราชภัฏจันทรเกษม" width="1000" height="750" loading="lazy" decoding="async" />
+            <figcaption><div data-lang="en"><strong>Chandrakasem Rajabhat University</strong><span lang="th">ชีวิตการทำงานที่ไม่มีสอนในตำรา</span> · Online session · <span class="nowrap">March 2026</span></div><div data-lang="th"><strong>มหาวิทยาลัยราชภัฏจันทรเกษม</strong>ชีวิตการทำงานที่ไม่มีสอนในตำรา · บรรยายออนไลน์ · <span class="nowrap">มีนาคม 2569</span></div></figcaption>
           </figure>
         </li>
       </ul>
@@ -227,12 +264,13 @@
 
     <!-- Professional profile -->
     <section class="part part--divided" id="profile" aria-labelledby="profile-heading">
-      <h2 id="profile-heading" class="part-heading">Professional Profile</h2>
-      <p class="section-intro">The courses, work experience, and certifications behind Arin’s sessions.</p>
+      <h2 id="profile-heading" class="part-heading"><span data-lang="en">Professional Profile</span><span data-lang="th">โปรไฟล์และประสบการณ์</span></h2>
+      <p class="section-intro" data-lang="en">The courses, work experience, and certifications behind Arin’s sessions.</p>
+      <p class="section-intro" data-lang="th">คอร์ส ประสบการณ์การทำงาน และใบรับรองที่อยู่เบื้องหลังการบรรยายของ Arin</p>
 
     <!-- Courses -->
     <section class="section-block" aria-labelledby="courses-heading">
-      <h3 id="courses-heading" class="section-heading">Courses &amp; Learning Resources</h3>
+      <h3 id="courses-heading" class="section-heading"><span data-lang="en">Courses &amp; Learning Resources</span><span data-lang="th">คอร์สและแหล่งเรียนรู้</span></h3>
       <ul class="course-grid">
 
         <li>
@@ -242,7 +280,7 @@
               <span class="course-badge-title">Decode Work</span>
               <span class="course-badge-sub" lang="th">ทำงานเก่งในแบบคุณเอง</span>
               <span class="course-badge-platform">
-                Skilllane · Thai
+                <span data-lang="en">Skilllane · Thai</span><span data-lang="th">Skilllane · ภาษาไทย</span>
                 <svg viewBox="0 0 256 256" fill="none" aria-hidden="true"><path d="M176 64h48v48M96 160l128-96" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M184 144v48a8 8 0 0 1-8 8H64a8 8 0 0 1-8-8V72a8 8 0 0 1 8-8h48" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
             </span>
@@ -256,7 +294,7 @@
               <span class="course-badge-title">Business Analyst Essentials</span>
               <span class="course-badge-sub" lang="th">เริ่มต้นสู่สาย BA &amp; PO ด้วยทักษะที่ใช้ได้จริง</span>
               <span class="course-badge-platform">
-                Skilllane · Thai
+                <span data-lang="en">Skilllane · Thai</span><span data-lang="th">Skilllane · ภาษาไทย</span>
                 <svg viewBox="0 0 256 256" fill="none" aria-hidden="true"><path d="M176 64h48v48M96 160l128-96" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M184 144v48a8 8 0 0 1-8 8H64a8 8 0 0 1-8-8V72a8 8 0 0 1 8-8h48" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
             </span>
@@ -268,9 +306,9 @@
             <img class="course-badge-thumb" src="Media/courses/practical-user-stories.jpg" alt="" width="720" height="405" loading="lazy" decoding="async" />
             <span class="course-badge-text">
               <span class="course-badge-title">Practical User Stories for Real IT Projects</span>
-              <span class="course-badge-sub">From backlog basics to clear user stories and professional sign-off</span>
+              <span class="course-badge-sub"><span data-lang="en">From backlog basics to clear user stories and professional sign-off</span><span data-lang="th">ตั้งแต่พื้นฐาน backlog จนถึง user story ที่ชัดเจนและการ sign-off อย่างมืออาชีพ</span></span>
               <span class="course-badge-platform">
-                Udemy · English
+                <span data-lang="en">Udemy · English</span><span data-lang="th">Udemy · ภาษาอังกฤษ</span>
                 <svg viewBox="0 0 256 256" fill="none" aria-hidden="true"><path d="M176 64h48v48M96 160l128-96" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><path d="M184 144v48a8 8 0 0 1-8 8H64a8 8 0 0 1-8-8V72a8 8 0 0 1 8-8h48" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
             </span>
@@ -282,59 +320,62 @@
 
     <!-- Previous experience -->
     <section class="section-block" aria-labelledby="experience-heading">
-      <h3 id="experience-heading" class="section-heading">Work Experience</h3>
-      <p class="section-intro">
+      <h3 id="experience-heading" class="section-heading"><span data-lang="en">Work Experience</span><span data-lang="th">ประสบการณ์การทำงานที่ผ่านมา</span></h3>
+      <p class="section-intro" data-lang="en">
         Background as a Senior IT Consultant, business analyst, and product owner across consulting, banking, and startups.
+      </p>
+      <p class="section-intro" data-lang="th">
+        ประสบการณ์ในฐานะ Senior IT Consultant, Business Analyst และ Product Owner ทั้งในบริษัทที่ปรึกษา ธนาคาร และสตาร์ทอัพ
       </p>
       <ol class="timeline">
 
         <li class="timeline-item">
           <span class="timeline-marker" aria-hidden="true"></span>
           <span class="timeline-role"><span class="timeline-company">IBMDT</span> — IT Product Owner &amp; Senior Founding Business Analyst</span>
-          <p class="timeline-date">April – September 2025</p>
-        <p class="timeline-desc">Established Business Analysis standards for multiple product teams under the IBM Garage framework</p>
+          <p class="timeline-date"><span data-lang="en">April – September 2025</span><span data-lang="th">เมษายน – กันยายน 2568</span></p>
+        <p class="timeline-desc"><span data-lang="en">Established Business Analysis standards for multiple product teams under the IBM Garage framework</span><span data-lang="th">วางมาตรฐานงาน Business Analysis ให้กับหลายทีมโปรดักต์ ภายใต้กรอบการทำงาน IBM Garage</span></p>
         </li>
 
         <li class="timeline-item">
           <span class="timeline-marker" aria-hidden="true"></span>
           <span class="timeline-role"><span class="timeline-company">Krungsri Nimble</span> — Innovation Product Owner</span>
-          <p class="timeline-date">April 2024 – March 2025</p>
-          <p class="timeline-desc">Defined strategy and roadmap for an AI-driven internal platform, from concept through pilot rollout</p>
+          <p class="timeline-date"><span data-lang="en">April 2024 – March 2025</span><span data-lang="th">เมษายน 2567 – มีนาคม 2568</span></p>
+          <p class="timeline-desc"><span data-lang="en">Defined strategy and roadmap for an AI-driven internal platform, from concept through pilot rollout</span><span data-lang="th">วางกลยุทธ์และ roadmap สำหรับแพลตฟอร์มภายในที่ขับเคลื่อนด้วย AI ตั้งแต่แนวคิดจนถึงการทดลองใช้จริง</span></p>
         </li>
 
         <li class="timeline-item">
           <span class="timeline-marker" aria-hidden="true"></span>
-          <span class="timeline-role"><span class="timeline-company">Absolute Consulting Co., Ltd.</span> — Co-Founder &amp; Product Lead</span>
-          <p class="timeline-date">January 2022 – March 2024</p>
-          <p class="timeline-desc">Co-founded a startup and built a mental health app from the ground up to launch, overseeing everything from user research to cross-functional teams</p>
+          <span class="timeline-role"><span class="timeline-company">Absolute Consulting Co., Ltd.</span> — <span data-lang="en">Co-Founder &amp; Product Lead</span><span data-lang="th">ผู้ร่วมก่อตั้งและ Product Lead</span></span>
+          <p class="timeline-date"><span data-lang="en">January 2022 – March 2024</span><span data-lang="th">มกราคม 2565 – มีนาคม 2567</span></p>
+          <p class="timeline-desc"><span data-lang="en">Co-founded a startup and built a mental health app from the ground up to launch, overseeing everything from user research to cross-functional teams</span><span data-lang="th">ร่วมก่อตั้งสตาร์ทอัพ พัฒนาแอปพลิเคชันด้านสุขภาพใจตั้งแต่ต้นจนเปิดตัวจริง ดูแลตั้งแต่งานวิจัยผู้ใช้จนถึงทีมข้ามสายงาน</span></p>
         </li>
 
         <li class="timeline-item">
           <span class="timeline-marker" aria-hidden="true"></span>
           <span class="timeline-role"><span class="timeline-company">PwC SEA Consulting</span> — Managing Consultant &amp; Workstream Lead</span>
-          <p class="timeline-date">October – December 2021</p>
-         <p class="timeline-desc">Led process design workshops for regional enterprise clients alongside international experts</p>
+          <p class="timeline-date"><span data-lang="en">October – December 2021</span><span data-lang="th">ตุลาคม – ธันวาคม 2564</span></p>
+         <p class="timeline-desc"><span data-lang="en">Led process design workshops for regional enterprise clients alongside international experts</span><span data-lang="th">นำ workshop ออกแบบกระบวนการทำงานให้ลูกค้าองค์กรระดับภูมิภาค ร่วมกับผู้เชี่ยวชาญต่างประเทศ</span></p>
         </li>
 
         <li class="timeline-item">
           <span class="timeline-marker" aria-hidden="true"></span>
           <span class="timeline-role"><span class="timeline-company">IBM Consulting Thailand</span> — Senior Consultant &amp; Senior Business Analyst</span>
-          <p class="timeline-date">July 2015 – October 2021</p>
-          <p class="timeline-desc">Owned requirements gathering and design workshops for enterprise banking projects for over 6 years, while mentoring junior team members</p>
+          <p class="timeline-date"><span data-lang="en">July 2015 – October 2021</span><span data-lang="th">กรกฎาคม 2558 – ตุลาคม 2564</span></p>
+          <p class="timeline-desc"><span data-lang="en">Owned requirements gathering and design workshops for enterprise banking projects for over 6 years, while mentoring junior team members</span><span data-lang="th">ดูแลงาน requirement และ design workshop ให้กับโปรเจกต์ระดับองค์กรในอุตสาหกรรมธนาคารกว่า 6 ปี พร้อมเป็นพี่เลี้ยงให้ทีมรุ่นน้อง</span></p>
         </li>
 
         <li class="timeline-item">
           <span class="timeline-marker" aria-hidden="true"></span>
           <span class="timeline-role"><span class="timeline-company">IT-One</span> — Associate Consultant</span>
-          <p class="timeline-date">November 2014 – May 2015</p>
-          <p class="timeline-desc">Supported analysis and development of the SAP Sales &amp; Distribution module for domestic and international clients</p>
+          <p class="timeline-date"><span data-lang="en">November 2014 – May 2015</span><span data-lang="th">พฤศจิกายน 2557 – พฤษภาคม 2558</span></p>
+          <p class="timeline-desc"><span data-lang="en">Supported analysis and development of the SAP Sales &amp; Distribution module for domestic and international clients</span><span data-lang="th">สนับสนุนงานวิเคราะห์และพัฒนาระบบ SAP โมดูล Sales &amp; Distribution ให้ลูกค้าทั้งในและต่างประเทศ</span></p>
         </li>
 
         <li class="timeline-item">
           <span class="timeline-marker" aria-hidden="true"></span>
           <span class="timeline-role"><span class="timeline-company">Roundarch Isobar (Boston, USA)</span> — Software Quality Assurance Intern</span>
-          <p class="timeline-date">September – December 2013</p>
-          <p class="timeline-desc">Worked within an Agile development team, handling software quality assurance testing</p>
+          <p class="timeline-date"><span data-lang="en">September – December 2013</span><span data-lang="th">กันยายน – ธันวาคม 2556</span></p>
+          <p class="timeline-desc"><span data-lang="en">Worked within an Agile development team, handling software quality assurance testing</span><span data-lang="th">ร่วมทีมพัฒนาในสภาพแวดล้อมแบบ Agile ดูแลงานทดสอบคุณภาพซอฟต์แวร์</span></p>
         </li>
 
       </ol>
@@ -342,16 +383,19 @@
 
     <!-- Certifications -->
     <section class="section-block" aria-labelledby="certs-heading">
-      <h3 id="certs-heading" class="section-heading">Certifications</h3>
-      <p class="section-intro">
+      <h3 id="certs-heading" class="section-heading"><span data-lang="en">Certifications</span><span data-lang="th">การรับรองและใบประกาศนียบัตร</span></h3>
+      <p class="section-intro" data-lang="en">
         Certified Professional Counselor and Career Coach, alongside IT and product credentials from IBM.
+      </p>
+      <p class="section-intro" data-lang="th">
+        Certified Professional Counselor และ Career Coach พร้อมใบรับรองด้าน IT และโปรดักต์จาก IBM
       </p>
 
       <h4 class="cert-group-heading cert-group-heading--first">
         <span class="cert-group-icon">
           <svg viewBox="0 0 256 256" fill="none" aria-hidden="true"><rect x="56" y="56" width="144" height="96" rx="10" stroke="currentColor" stroke-width="14"/><path d="M32 188h192l14 24H18Z" stroke="currentColor" stroke-width="14" stroke-linejoin="round"/></svg>
         </span>
-        IT &amp; Product
+        <span data-lang="en">IT &amp; Product</span><span data-lang="th">สาย IT &amp; Product</span>
       </h4>
       <ul class="badge-grid">
 
@@ -381,7 +425,7 @@
         <span class="cert-group-icon">
           <svg viewBox="0 0 256 256" fill="none" aria-hidden="true"><path d="M128 208S48 160 48 104a44 44 0 0 1 80-24 44 44 0 0 1 80 24c0 56-80 104-80 104Z" stroke="currentColor" stroke-width="14" stroke-linejoin="round"/></svg>
         </span>
-        Counseling
+        <span data-lang="en">Counseling</span><span data-lang="th">การให้คำปรึกษา (Counseling)</span>
       </h4>
       <ul class="badge-grid">
 
@@ -416,10 +460,15 @@
         </li>
 
       </ul>
-      <p class="education-note">
+      <p class="education-note" data-lang="en">
         <b>Education:</b>
         <br> Master’s degree: Information Systems, Northeastern University <span class="nowrap">(🇺🇸 Boston, USA)</span>
         <br> Bachelor’s degree: Computer Science, Chulalongkorn University <span class="nowrap">(🇹🇭 GPA 3.35)</span>
+      </p>
+      <p class="education-note" data-lang="th">
+        <b>การศึกษา:</b>
+        <br> ปริญญาโท: Information Systems, Northeastern University <span class="nowrap">(🇺🇸 Boston, USA)</span>
+        <br> ปริญญาตรี: Computer Science, จุฬาลงกรณ์มหาวิทยาลัย <span class="nowrap">(🇹🇭 GPA 3.35)</span>
       </p>
     </section>
     </section>
@@ -427,7 +476,8 @@
     <!-- Contact -->
     <section class="section-block" id="contact" aria-labelledby="contact-heading">
       <div class="contact-card">
-        <h2 id="contact-heading">Let’s Discuss Your Event</h2>
+        <h2 id="contact-heading"><span data-lang="en">Let’s Discuss Your Event</span><span data-lang="th">มาคุยเรื่องงานของคุณกัน</span></h2>
+        <div data-lang="en">
         <p class="contact-lead">
           Looking for a session that helps your audience make sense of work, explore ideas, or see a familiar
           challenge from a different perspective?
@@ -435,19 +485,28 @@
         <p class="contact-lead">
           Get in touch to discuss your audience, the purpose of the session, and a suitable topic and format.
         </p>
+        </div>
+        <div data-lang="th">
+        <p class="contact-lead">
+          กำลังมองหาเซสชันที่ช่วยให้ผู้ฟังเข้าใจงานได้ชัดขึ้น สำรวจไอเดียใหม่ ๆ หรือมองปัญหาเดิมจากมุมที่ต่างออกไปอยู่ใช่ไหม
+        </p>
+        <p class="contact-lead">
+          ติดต่อมาเพื่อพูดคุยเรื่องกลุ่มผู้ฟัง วัตถุประสงค์ของงาน รวมถึงหัวข้อและรูปแบบที่เหมาะสมได้เลย
+        </p>
+        </div>
         <a class="btn btn-light" href="mailto:arin.arinmw@gmail.com?subject=Speaking%20engagement%20inquiry">
           <svg viewBox="0 0 256 256" fill="none" aria-hidden="true"><rect x="32" y="56" width="192" height="144" rx="16" stroke="currentColor" stroke-width="16"/><path d="m40 72 88 64 88-64" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Email Arin About Your Event
+          <span data-lang="en">Email Arin About Your Event</span><span data-lang="th">ส่งอีเมลคุยเรื่องงาน</span>
         </a>
-        <p class="contact-email">or write to <a href="mailto:arin.arinmw@gmail.com">arin.arinmw@gmail.com</a></p>
+        <p class="contact-email"><span data-lang="en">or write to</span><span data-lang="th">หรือเขียนถึง</span> <a href="mailto:arin.arinmw@gmail.com">arin.arinmw@gmail.com</a></p>
 
         <div class="contact-brief">
-          <p class="contact-brief-title">To help start the conversation, please share:</p>
+          <p class="contact-brief-title"><span data-lang="en">To help start the conversation, please share:</span><span data-lang="th">เพื่อให้เริ่มคุยได้ง่ายขึ้น รบกวนแจ้งข้อมูลต่อไปนี้</span></p>
           <ul class="contact-list">
-            <li>Your organization and intended audience</li>
-            <li>The purpose of the event or learning session</li>
-            <li>Your preferred topic or the challenge you want to explore</li>
-            <li>The proposed date, location or online format, and session length</li>
+            <li><span data-lang="en">Your organization and intended audience</span><span data-lang="th">ชื่อองค์กรและกลุ่มผู้ฟัง</span></li>
+            <li><span data-lang="en">The purpose of the event or learning session</span><span data-lang="th">วัตถุประสงค์ของงานหรือการเรียนรู้</span></li>
+            <li><span data-lang="en">Your preferred topic or the challenge you want to explore</span><span data-lang="th">หัวข้อที่สนใจ หรือโจทย์ที่อยากสำรวจ</span></li>
+            <li><span data-lang="en">The proposed date, location or online format, and session length</span><span data-lang="th">วันที่ สถานที่หรือรูปแบบออนไลน์ และระยะเวลาที่ต้องการ</span></li>
           </ul>
         </div>
       </div>
@@ -456,7 +515,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>Follow and connect with Arin</p>
+    <p><span data-lang="en">Follow and connect with Arin</span><span data-lang="th">ติดตามและติดต่อเราได้ที่</span></p>
     <div class="social-links">
       <a class="social-link" href="https://www.instagram.com/arin.arinmw" target="_blank" rel="noopener">
         <svg viewBox="0 0 256 256" fill="none" aria-hidden="true"><rect x="40" y="40" width="176" height="176" rx="48" stroke="currentColor" stroke-width="14"/><circle cx="128" cy="128" r="40" stroke="currentColor" stroke-width="14"/><circle cx="172" cy="84" r="9" fill="currentColor"/></svg>
@@ -476,14 +535,47 @@
       </a>
       <a class="social-link" href="https://linktr.ee/arinmw" target="_blank" rel="noopener">
         <svg viewBox="0 0 256 256" fill="none" aria-hidden="true"><path d="M104 152l48-48M96 176l-24 24a40 40 0 0 1-56-56l24-24M160 80l24-24a40 40 0 0 1 56 56l-24 24" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        All links
+        <span data-lang="en">All links</span><span data-lang="th">ลิงก์ทั้งหมด</span>
       </a>
     </div>
-    <p class="copyright">Email Contact: arin.arinmw@gmail.com</p>
+    <p class="copyright"><span data-lang="en">Email Contact:</span><span data-lang="th">อีเมลติดต่อ:</span> arin.arinmw@gmail.com</p>
   </footer>
 
 </div>
 <script>
+  (function () {
+    var KEY = 'arinmw-lang';
+    var root = document.documentElement;
+    var titles = { en: document.title, th: 'อรินจ์ หมวดทอง | วิทยากร · ผู้สอน · Product & Systems Thinker' };
+    var attrs = ['alt', 'aria-label'];
+    var translatable = document.querySelectorAll('[data-alt-th], [data-aria-label-th]');
+    translatable.forEach(function (el) {
+      attrs.forEach(function (a) {
+        if (el.hasAttribute('data-' + a + '-th')) el.setAttribute('data-' + a + '-en', el.getAttribute(a) || '');
+      });
+    });
+    function apply(lang) {
+      root.lang = lang;
+      document.title = titles[lang];
+      translatable.forEach(function (el) {
+        attrs.forEach(function (a) {
+          var v = el.getAttribute('data-' + a + '-' + lang);
+          if (v !== null) el.setAttribute(a, v);
+        });
+      });
+      document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.setLang === lang));
+      });
+    }
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        apply(b.dataset.setLang);
+        try { localStorage.setItem(KEY, b.dataset.setLang); } catch (e) {}
+      });
+    });
+    apply(root.lang === 'th' ? 'th' : 'en');
+  })();
+
   document.querySelectorAll('.video-thumb[data-video-id]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var frame = document.createElement('iframe');

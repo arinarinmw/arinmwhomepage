@@ -693,6 +693,11 @@ html[lang="th"] .contact h2 {
   max-width: 62ch;
 }
 
+.about-cols > div > p + p {
+  padding-left: 44px;
+  border-left: 1px solid var(--edge);
+}
+
 /* topics: sticky notes */
 
 .notes {
@@ -1456,6 +1461,11 @@ html[lang="th"] .contact h2 {
   .duo,
   .about-cols > div {
     grid-template-columns: 1fr;
+  }
+
+  .about-cols > div > p + p {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .formats li {

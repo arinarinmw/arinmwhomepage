@@ -1519,6 +1519,12 @@ html[lang="th"] .contact-lead {
   max-width: 48em;
 }
 
+.notes-foot {
+  margin-top: 20px;
+  color: var(--ink-soft);
+  font-size: 14.5px;
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 1100px) {

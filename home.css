@@ -1509,6 +1509,16 @@ html[lang="th"] .article-title {
   text-underline-offset: 4px;
 }
 
+/* Thai glyphs are narrower than the "0" that ch measures, so cap Thai text in em instead */
+
+html[lang="th"] .lede,
+html[lang="th"] .formats p,
+html[lang="th"] .entry-desc,
+html[lang="th"] .about-cols p,
+html[lang="th"] .contact-lead {
+  max-width: 48em;
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 1100px) {

@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=IBM+Plex+Sans+Thai:wght@400;500&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="home.css" />
+<link rel="stylesheet" href="home.css?v=1792220490" />
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -643,6 +643,25 @@
       c.addEventListener('mouseleave', function () { hl(null); });
       c.addEventListener('focus', function () { hl(n); });
       c.addEventListener('blur', function () { hl(null); });
+    });
+  })();
+
+  /* Thai: keep the last two words of a paragraph together so no word is left alone on the last line */
+  (function () {
+    var sel = '.lede[data-lang="th"], .lede > [data-lang="th"], .formats p [data-lang="th"], .entry-desc, .about-cols [data-lang="th"] p, .contact-lead, .contact-brief [data-lang="th"], .note-body [data-lang="th"]';
+    document.querySelectorAll(sel).forEach(function (el) {
+      var last = el.lastChild;
+      while (last && last.nodeType === 3 && !last.nodeValue.trim()) last = last.previousSibling;
+      if (!last || last.nodeType !== 3) return;
+      var m = last.nodeValue.match(/^([\s\S]*?)(\S+\s+\S+)(\s*)$/);
+      if (!m || !/[\u0E00-\u0E7F]/.test(m[2]) || m[2].length > 26) return;
+      var span = document.createElement('span');
+      span.className = 'nowrap';
+      span.textContent = m[2];
+      var tail = document.createTextNode(m[3]);
+      last.nodeValue = m[1];
+      el.insertBefore(span, last.nextSibling);
+      el.insertBefore(tail, span.nextSibling);
     });
   })();
 

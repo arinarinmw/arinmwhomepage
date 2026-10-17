@@ -21,18 +21,18 @@ colors:
   sage: "#b4c4a0"
 typography:
   display:
-    fontFamily: "Newsreader, Noto Serif Thai, serif"
+    fontFamily: "IBM Plex Sans Thai, Inter, sans-serif"
     fontSize: "clamp(28px, 3.5vw, 42px)"
     fontWeight: 500
     lineHeight: 1.15
     letterSpacing: "-0.015em"
   body:
-    fontFamily: "Sarabun, Noto Sans Thai, sans-serif"
+    fontFamily: "Inter, IBM Plex Sans Thai, Noto Sans Thai, sans-serif"
     fontSize: "17px"
     fontWeight: 400
     lineHeight: 1.65
   label:
-    fontFamily: "Sarabun, Noto Sans Thai, sans-serif"
+    fontFamily: "Inter, IBM Plex Sans Thai, Noto Sans Thai, sans-serif"
     fontSize: "14.5px"
     fontWeight: 400
     lineHeight: 1.3
@@ -68,14 +68,14 @@ Scope: `index.html` and `home.css`. The four course-student pages still use `sit
 
 **Creative North Star: "The Warm Room"**
 
-The homepage is still Arin's profile as one tiny isometric room where every object is a section and a piece of real proof, now in a quiet, adult palette: oat walls, a sand-and-cream checker floor, walnut furniture with soft brown outlines. Around it the page is calm: a warm oat ground, cream panels, an editorial serif for headings and a humanist sans for everything else.
+The homepage is still Arin's profile as one tiny isometric room where every object is a section and a piece of real proof, now in a quiet, adult palette: oat walls, a sand-and-cream checker floor, walnut furniture with soft brown outlines. Around it the page is calm: a warm oat ground, cream panels, IBM Plex Sans Thai Medium for headings (a stand-in for Asangha Medium, which is a Canva font) and Inter Regular for everything else.
 
 It keeps the charm of the room and drops the candy: no saturated pastels, no heavy outlines, no tile bands, no coloured icon bubbles.
 
 **Key Characteristics:**
 - One authored isometric SVG room as the hero; each object links to its section.
 - Beige, cream, clay and brown only; sage appears just in the plant.
-- Newsreader (with Noto Serif Thai) for headings, Sarabun for text and controls.
+- IBM Plex Sans Thai Medium for headings (stand-in for Asangha Medium) and Inter Regular for text and controls.
 - Hairline borders (1px), small radii, light shadows.
 - Bilingual EN default, TH toggle; every text node exists in both languages.
 
@@ -90,8 +90,8 @@ It keeps the charm of the room and drops the candy: no saturated pastels, no hea
 
 ## Typography
 
-- **Display:** Newsreader 500 (Noto Serif Thai for Thai), tracking -0.015em: hero tagline, part headings, note titles.
-- **Body and UI:** Sarabun 400/600 (Noto Sans Thai fallback): paragraphs, chips, buttons, captions. Body 17px, leading 1.65 (Thai 1.8).
+- **Display:** IBM Plex Sans Thai 500 (Latin and Thai; stand-in for Asangha Medium, a Canva font), tracking -0.015em: hero tagline, part headings, note titles.
+- **Body and UI:** Inter 400 (IBM Plex Sans Thai for Thai glyphs): paragraphs, chips, buttons, captions. Body 17px, leading 1.65 (Thai 1.8).
 - Thai tagline breaks only between phrases.
 
 ## Layout
@@ -109,7 +109,7 @@ Small radii: chips and buttons 12px, cards 16px, panels 18-20px. Sticky notes ke
 ## Components
 
 - **Button:** walnut fill, cream text, 12px radius, soft shadow; secondary is a cream chip with a walnut outline.
-- **Chips:** cream, 1px edge, 12px radius, Sarabun 14.5px.
+- **Chips:** cream, 1px edge, 12px radius, Inter 14.5px.
 - **Sticky notes:** tan, clay and oat-deep, folded corner, expandable.
 - **Video frames:** sand TV frame around a photo thumbnail, click to load YouTube.
 - **Plaques:** certificates in framed cream tiles with an inset sand border.

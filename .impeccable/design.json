@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T04:23:07.932902+00:00",
+  "title": "Design System: arinmw.com homepage (The Warm Room)",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Walnut Action",
+        "canonical": "#7a4d32",
+        "tonalRamp": [
+          "#5e3822",
+          "#66402a",
+          "#7a4d32",
+          "#d9b9a2",
+          "#f4ede3"
+        ]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Oat Ground",
+        "canonical": "#f4ede3",
+        "tonalRamp": [
+          "#fcf9f3",
+          "#f4ede3",
+          "#e4d8c6",
+          "#d8c7ad"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Espresso Ink",
+        "canonical": "#3a2a20",
+        "tonalRamp": [
+          "#3a2a20",
+          "#6a5646",
+          "#7b6150"
+        ]
+      },
+      "clay": {
+        "role": "secondary",
+        "displayName": "Clay",
+        "canonical": "#ecd8c9",
+        "tonalRamp": [
+          "#ecd8c9",
+          "#d9b9a2"
+        ]
+      },
+      "tan": {
+        "role": "secondary",
+        "displayName": "Tan",
+        "canonical": "#f1e0c0",
+        "tonalRamp": [
+          "#f1e0c0",
+          "#e4c999"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display (Newsreader)",
+        "purpose": "Hero tagline, part headings, note titles."
+      },
+      "body": {
+        "displayName": "Body and UI (Sarabun)",
+        "purpose": "Paragraphs, chips, buttons, captions."
+      }
+    },
+    "shadows": [
+      {
+        "name": "panel",
+        "value": "0 10px 24px rgba(58,42,32,.07), 0 1px 3px rgba(58,42,32,.05)",
+        "purpose": "Panels."
+      },
+      {
+        "name": "small",
+        "value": "0 4px 10px rgba(58,42,32,.07), 0 1px 2px rgba(58,42,32,.05)",
+        "purpose": "Chips and notes."
+      },
+      {
+        "name": "action",
+        "value": "0 10px 20px rgba(122,77,50,.18)",
+        "purpose": "Primary button only."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Entrances (rise 24px with opacity, 80ms stagger), clip-path wipe on gallery, button feedback. Scroll-linked wordmark scale (max 6%). All disabled under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-stack",
+        "value": "1100px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "760px"
+      },
+      {
+        "name": "small",
+        "value": "480px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "The one green action.",
+      "html": "<a class=\"ds-btn\">Email Arin About Your Event</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;min-height:48px;padding:10px 24px;background:#0f7d45;color:#fff;font-family:'Libre Franklin',sans-serif;font-weight:700;font-size:15px}"
+    },
+    {
+      "name": "Choice",
+      "kind": "chip",
+      "refersTo": "choice",
+      "description": "Composer option; selected inverts.",
+      "html": "<span class=\"ds-choice\">Design Thinking</span>",
+      "css": ".ds-choice{display:inline-flex;align-items:center;min-height:44px;padding:6px 16px;background:#e1dad7;color:#2b2622;font-family:'Libre Franklin',sans-serif;font-weight:700;font-size:15px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Warm Room",
+    "overview": "Arin's profile as one tiny isometric room in oat, clay and walnut, with coffee, a scented candle and a round rug: quiet, mature and minimal, with a serif for headings and one walnut action.",
+    "keyCharacteristics": [
+      "One authored isometric room as the hero",
+      "Beige, cream, clay and brown with one walnut action",
+      "Newsreader headings over Sarabun text",
+      "Coffee, candle, dried grasses and a round rug for a cozy mood",
+      "Bilingual EN/TH"
+    ],
+    "rules": [
+      {
+        "name": "The One Action Rule",
+        "body": "Walnut means do something; clay, oat and tan decorate objects only.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do keep colour to beige, cream, clay and brown",
+      "Do link every room object to its section",
+      "Do keep every text in both languages",
+      "Do state only true facts"
+    ],
+    "donts": [
+      "Don't bring back violet, candy pastels or heavy outlines",
+      "Don't add eyebrows, section numbers, hard shadows or nested cards",
+      "Don't invent numbers, testimonials or logos"
+    ]
+  }
+}

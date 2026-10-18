@@ -1760,3 +1760,87 @@ html[lang="th"] .contact-lead {
     gap: 32px;
   }
 }
+
+/* video highlights: three compact cards in one row */
+
+.tv-feature {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.tv-grid {
+  display: contents;
+}
+
+.video-card {
+  gap: 12px;
+  margin-left: 0;
+}
+
+.video-card--feature .play,
+.video-card .play {
+  width: 48px;
+  height: 48px;
+}
+
+.video-card--feature .play svg,
+.video-card .play svg {
+  width: 20px;
+  height: 20px;
+}
+
+.video-title,
+.video-card--feature .video-title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 15.5px;
+  line-height: 1.45;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+@media (max-width: 900px) {
+  .tv-feature {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* campus visits: four compact photos in one row */
+
+.polaroids {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.polaroid img {
+  aspect-ratio: 4 / 3;
+}
+
+.polaroid figcaption {
+  margin-top: 10px;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.polaroid strong {
+  margin-bottom: 2px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .polaroids {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .polaroids {
+    grid-template-columns: 1fr;
+  }
+}

@@ -560,173 +560,6 @@ html[lang="th"] .contact h2 {
   border-left: 1px solid var(--edge);
 }
 
-/* topics: sticky notes */
-
-.notes {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 26px;
-  align-items: start;
-  margin-top: 32px;
-}
-
-.note {
-  --note: var(--tan);
-  filter: drop-shadow(0 10px 10px rgba(58, 42, 32, 0.14));
-  transition: rotate 380ms var(--ease);
-}
-
-.note:nth-child(1) {
-  rotate: -1.4deg;
-}
-
-.note:nth-child(2) {
-  --note: var(--clay);
-  rotate: 1deg;
-}
-
-.note:nth-child(3) {
-  --note: var(--oat-deep);
-  rotate: -0.7deg;
-}
-
-.note:has(details[open]),
-.note:hover {
-  rotate: 0deg;
-}
-
-.note details {
-  padding: 20px 22px 22px;
-  background: var(--note);
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%);
-}
-
-.note summary {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  cursor: pointer;
-  list-style: none;
-}
-
-.note summary::-webkit-details-marker {
-  display: none;
-}
-
-.note-title {
-  display: block;
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 21px;
-  line-height: 1.3;
-}
-
-.note-sub {
-  display: block;
-  margin-top: 4px;
-  font-size: 15.5px;
-  line-height: 1.5;
-}
-
-.note-toggle {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  margin-top: 2px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
-  flex-shrink: 0;
-  transition: background-color 200ms var(--ease);
-}
-
-.note summary:hover .note-toggle {
-  background: #fff;
-}
-
-.note-toggle .i {
-  width: 18px;
-  height: 18px;
-  transition: transform 300ms var(--ease);
-}
-
-.note details[open] .note-toggle .i {
-  transform: rotate(180deg);
-}
-
-.note summary:focus-visible {
-  outline-offset: 6px;
-}
-
-.note-body {
-  display: grid;
-  gap: 12px;
-  margin-top: 16px;
-  padding-bottom: 14px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.note-body strong {
-  display: block;
-  font-family: var(--font-ui);
-  font-weight: 500;
-}
-
-/* formats: a catalogue list */
-
-.formats {
-  margin-top: 8px;
-}
-
-.formats li {
-  display: grid;
-  grid-template-columns: 52px 230px 1fr;
-  gap: 8px 22px;
-  align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--edge);
-}
-
-.formats li:last-child {
-  border-bottom: 0;
-}
-
-.formats h4 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 19px;
-  line-height: 1.3;
-}
-
-.formats p {
-  max-width: 68ch;
-  color: var(--ink-soft);
-  font-size: 16.5px;
-}
-
-.duo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px 56px;
-  margin-top: 28px;
-  padding-top: 32px;
-  border-top: 1px solid var(--edge);
-}
-
-.duo h4 {
-  margin-bottom: 6px;
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 18px;
-}
-
-.duo p {
-  color: var(--ink-soft);
-  font-size: 16.5px;
-}
-
 /* videos: little televisions */
 
 .tv-feature {
@@ -1365,7 +1198,6 @@ html[lang="th"] .article-title {
 /* Thai glyphs are narrower than the "0" that ch measures, so cap Thai text in em instead */
 
 html[lang="th"] .lede,
-html[lang="th"] .formats p,
 html[lang="th"] .entry-desc,
 html[lang="th"] .about-cols p,
 html[lang="th"] .contact-lead {
@@ -1437,7 +1269,6 @@ html[lang="th"] .contact-lead {
   }
 
   .contact-grid,
-  .duo,
   .about-cols > div {
     grid-template-columns: 1fr;
   }
@@ -1450,14 +1281,6 @@ html[lang="th"] .contact-lead {
   .articles {
     grid-template-columns: 1fr;
     gap: 12px;
-  }
-
-  .formats li {
-    grid-template-columns: 52px 1fr;
-  }
-
-  .formats p {
-    grid-column: 2;
   }
 }
 
@@ -1601,16 +1424,7 @@ html[lang="th"] .contact-lead {
   height: 22px;
 }
 
-.note,
-.note:nth-child(n) {
-  rotate: 0deg;
-  filter: none;
-}
 
-.note details {
-  border-radius: 12px;
-  clip-path: none;
-}
 
 .polaroid {
   padding: 0;
@@ -1713,10 +1527,6 @@ html[lang="th"] .contact-lead {
 
 .part-head {
   gap: 12px;
-}
-
-.formats li {
-  border-top-color: var(--edge);
 }
 
 .tv-feature .tv,
@@ -1889,4 +1699,48 @@ html[lang="th"] .contact-lead {
   color: var(--accent-deep);
   text-underline-offset: 3px;
   white-space: nowrap;
+}
+
+/* training and talks modes: a strong description and hashtag chips */
+
+.mode {
+  margin-top: 56px;
+  padding-top: 0;
+}
+
+.mode:first-of-type {
+  margin-top: 32px;
+}
+
+.mode-lede {
+  max-width: 62em;
+  margin-top: 12px;
+  color: var(--ink);
+  font-size: clamp(20px, 2vw, 25px);
+  line-height: 1.55;
+}
+
+html[lang="th"] .mode-lede {
+  line-height: 1.75;
+}
+
+.hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.hashtags li {
+  padding: 5px 16px;
+  border: 1px solid var(--edge);
+  border-radius: var(--radius-pill);
+  background: var(--panel);
+  color: var(--accent-deep);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.mode > h3 {
+  font-size: clamp(24px, 2.6vw, 32px);
 }

@@ -425,34 +425,6 @@ html[lang="th"] .tagline {
   line-height: 1.6;
 }
 
-.topic-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.topic-chips a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  padding: 3px 11px;
-  border: 1px solid var(--edge);
-  border-radius: var(--radius-pill);
-  background: var(--panel);
-  color: var(--ink);
-  font-family: var(--font-ui);
-  font-size: 12.5px;
-  line-height: 1.4;
-  white-space: nowrap;
-  text-decoration: none;
-  transition: border-color 200ms var(--ease), background-color 200ms var(--ease);
-}
-
-.topic-chips a:hover {
-  border-color: var(--accent);
-  background: #fcf9f7;
-}
-
 .tile-band,
 .tile-band--thin {
   display: none;
@@ -1572,10 +1544,8 @@ html[lang="th"] .contact-lead {
 .brand,
 .chip-link,
 .lang-toggle,
-.chip-link,
 .card,
-.to-room,
-.topic-chips a {
+.to-room {
   box-shadow: none;
 }
 

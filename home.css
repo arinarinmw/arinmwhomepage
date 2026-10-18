@@ -1139,51 +1139,32 @@ html[lang="th"] .contact h2 {
 }
 
 .article-title {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  display: block;
+  overflow: hidden;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 19px;
-  line-height: 1.35;
-  text-wrap: balance;
+  font-size: 15px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: var(--clay-deep);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+.article-link:hover .article-title,
+.article-link:focus-visible .article-title {
+  text-decoration-color: var(--accent);
 }
 
 html[lang="th"] .article-title {
   line-height: 1.5;
 }
 
-.article-ic {
-  display: grid;
-  place-items: center;
-  flex: none;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--edge);
-  border-radius: 50%;
-  background: var(--oat);
-  color: var(--accent-deep);
-}
 
-.article-ic .i {
-  width: 18px;
-  height: 18px;
-}
 
-.article-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-  padding-left: 48px;
-  color: var(--accent-deep);
-  font-size: 14px;
-}
 
-.article-meta .i {
-  width: 14px;
-  height: 14px;
-}
 
 .articles-more {
   margin-top: 20px;
@@ -1790,4 +1771,15 @@ html[lang="th"] .mode-lede {
     opacity: 0;
     transform: translateY(10px);
   }
+}
+
+/* article cover taken from the Medium post (only posts that have one) */
+
+.article-cover-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  background: var(--oat);
+  object-fit: cover;
 }

@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=IBM+Plex+Sans+Thai:wght@400;500&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="home.css?v=1792287358" />
+<link rel="stylesheet" href="home.css?v=1792287479" />
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -567,12 +567,55 @@
     apply(root.lang === 'th' ? 'th' : 'en');
   })();
 
+  /* collapsible sections: each main part can be folded away; links and the address hash open it */
+  (function () {
+    var parts = document.querySelectorAll('section.part');
+    parts.forEach(function (part) {
+      var head = part.querySelector(':scope > .part-head');
+      if (!head) return;
+      var body = document.createElement('div');
+      body.className = 'part-body';
+      body.id = part.id + '-body';
+      while (head.nextSibling) body.appendChild(head.nextSibling);
+      part.appendChild(body);
+      var h = head.querySelector('h2');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'part-toggle';
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-controls', body.id);
+      if (h && h.id) btn.setAttribute('aria-labelledby', h.id);
+      btn.innerHTML = '<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg>';
+      head.appendChild(btn);
+      function set(open) {
+        body.hidden = !open;
+        btn.setAttribute('aria-expanded', String(open));
+        part.classList.toggle('is-collapsed', !open);
+      }
+      btn.addEventListener('click', function () { set(body.hidden); });
+      head.addEventListener('click', function (e) {
+        if (e.target.closest('a, button')) return;
+        set(body.hidden);
+      });
+      part.__setOpen = set;
+    });
+    window.__openPartFor = function (el) {
+      var part = el && el.closest ? el.closest('section.part') : null;
+      if (part && part.__setOpen) part.__setOpen(true);
+    };
+    if (location.hash.length > 1) {
+      var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      window.__openPartFor(target);
+    }
+  })();
+
   (function () {
     var wrap = document.querySelector('.room-wrap');
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     function go(id) {
       var t = document.getElementById(id);
       if (!t) return;
+      if (window.__openPartFor) window.__openPartFor(t);
       t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
       if (history.replaceState) history.replaceState(null, '', '#' + id);
       t.classList.remove('is-target');

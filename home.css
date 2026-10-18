@@ -1844,3 +1844,48 @@ html[lang="th"] .contact-lead {
     grid-template-columns: 1fr;
   }
 }
+
+/* collapsible parts */
+
+.part-head {
+  cursor: pointer;
+}
+
+.part-toggle {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  margin-left: auto;
+  padding: 0;
+  border: 1px solid var(--edge);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--accent-deep);
+  cursor: pointer;
+  transition: background-color 200ms var(--ease), border-color 200ms var(--ease);
+}
+
+.part-toggle .i {
+  width: 18px;
+  height: 18px;
+  transition: transform 250ms var(--ease);
+}
+
+.part-toggle:hover {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.part-toggle[aria-expanded="true"] .i {
+  transform: rotate(180deg);
+}
+
+.part-body[hidden] {
+  display: none;
+}
+
+.part.is-collapsed {
+  padding-bottom: 0;
+}

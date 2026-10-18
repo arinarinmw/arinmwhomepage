@@ -416,13 +416,27 @@ html[lang="th"] .tagline {
   gap: 6px;
 }
 
-.counts li {
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  background: var(--ground);
-  color: var(--ink);
-  font-size: 14.5px;
-  line-height: 1.6;
+.counts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.counts .chip-link {
+  justify-content: center;
+  width: 100%;
+  min-height: 40px;
+  padding: 6px 12px;
+  background: var(--sand);
+  border-color: transparent;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.counts .chip-link:hover,
+.counts .chip-link:focus-visible {
+  border-color: var(--accent);
+  background: var(--oat-deep);
 }
 
 .tile-band,
@@ -1862,4 +1876,17 @@ html[lang="th"] .contact-lead {
 
 .part.is-collapsed .part-head {
   padding-bottom: 4px;
+}
+
+.modes-text {
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.modes-text a {
+  color: var(--accent-deep);
+  text-underline-offset: 3px;
+  white-space: nowrap;
 }

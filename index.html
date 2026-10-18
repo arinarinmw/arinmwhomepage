@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=IBM+Plex+Sans+Thai:wght@400;500&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="home.css?v=1792291921" />
+<link rel="stylesheet" href="home.css?v=1792292294" />
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -126,7 +126,7 @@
     <div class="tile-band tile-band--thin" aria-hidden="true"></div>
 
     <!-- Speaking and training topics -->
-    <section class="part" id="speaking-topics" aria-labelledby="topics-heading">
+    <section class="part" id="speaking-topics" aria-labelledby="topics-heading" data-open>
       <div class="part-head">
         <span class="bubble"><svg class="i" aria-hidden="true"><use href="#i-board"/></svg></span>
         <h2 id="topics-heading"><span data-lang="en">Speaking &amp; Training Topics</span><span data-lang="th">หัวข้อบรรยายและอบรม</span></h2>
@@ -493,7 +493,7 @@
     apply(root.lang === 'th' ? 'th' : 'en');
   })();
 
-  /* collapsible sections: every main part starts folded; the button, the heading, menu links and the address hash open it */
+  /* collapsible sections: main parts start folded (except one marked data-open); the button, the heading, menu links and the address hash open it */
   (function () {
     var parts = document.querySelectorAll('section.part');
     parts.forEach(function (part) {
@@ -524,7 +524,7 @@
         set(body.hidden);
       });
       part.__setOpen = set;
-      set(false);
+      set(part.hasAttribute('data-open'));
     });
     window.__openPartFor = function (el) {
       var part = el && el.closest ? el.closest('section.part') : null;

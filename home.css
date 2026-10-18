@@ -635,7 +635,7 @@ html[lang="th"] .contact h2 {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.94);
   color: var(--accent-deep);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 6px 16px rgba(58, 42, 32, 0.28);
   transition: transform 250ms var(--ease);
 }
 
@@ -1743,4 +1743,24 @@ html[lang="th"] .mode-lede {
 
 .mode > h3 {
   font-size: clamp(24px, 2.6vw, 32px);
+}
+
+/* pressed feedback: a small push-in on everything clickable */
+
+.lang-toggle button,
+.part-toggle {
+  transition: background-color 200ms var(--ease), border-color 200ms var(--ease), color 200ms var(--ease), transform 120ms var(--ease);
+}
+
+.chip-link:active,
+.btn:active,
+.part-toggle:active,
+.lang-toggle button:active,
+.article-link:active,
+.to-room.show:active {
+  transform: scale(0.97);
+}
+
+.video-thumb:active .play {
+  transform: scale(0.96);
 }

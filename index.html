@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=IBM+Plex+Sans+Thai:wght@400;500&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="home.css?v=1792292508" />
+<link rel="stylesheet" href="home.css?v=1792294315" />
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -543,6 +543,29 @@
       var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
       window.__openPartFor(target);
     }
+  })();
+
+  /* fade-up on scroll: only when motion is allowed; content is plain and visible without it */
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var items = document.querySelectorAll('.hero-copy, .hero-panels .card, section.part, .contact, footer.friends');
+    var root = document.documentElement;
+    root.classList.add('js-reveal');
+    var seen = 0;
+    items.forEach(function (el, i) {
+      el.classList.add('reveal');
+      if (el.classList.contains('card')) el.style.setProperty('--i', String(++seen));
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting || e.boundingClientRect.top < 0) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
   })();
 
   (function () {

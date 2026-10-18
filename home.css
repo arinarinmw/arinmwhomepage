@@ -1764,3 +1764,30 @@ html[lang="th"] .mode-lede {
 .video-thumb:active .play {
   transform: scale(0.96);
 }
+
+/* fade-up on scroll: opacity and transform only, switched on by script when motion is allowed */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js-reveal .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    transition-delay: calc(var(--i, 0) * 90ms);
+  }
+
+  .js-reveal .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .part-body:not([hidden]) {
+    animation: rise 520ms var(--ease) backwards;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}

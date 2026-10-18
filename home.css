@@ -1,4 +1,4 @@
-/* arinmw.com homepage: the Minihompy room */
+/* arinmw.com homepage */
 
 :root {
   --ground: #f4ede3;
@@ -362,139 +362,6 @@ html[lang="th"] .tagline {
 
 .btn-quiet:hover {
   background: #fcf9f7;
-}
-
-/* the room */
-
-.room-wrap {
-  min-width: 0;
-}
-
-.room {
-  position: relative;
-  width: 100%;
-  max-width: 560px;
-  margin: 0 auto;
-}
-
-.room-svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
-.obj {
-  cursor: pointer;
-}
-
-.lift {
-  transition: transform 380ms var(--ease), filter 380ms var(--ease);
-}
-
-.obj:hover .lift,
-.room-wrap[data-hl="topics"] [data-obj="topics"] .lift,
-.room-wrap[data-hl="campus"] [data-obj="campus"] .lift,
-.room-wrap[data-hl="courses"] [data-obj="courses"] .lift,
-.room-wrap[data-hl="certificates"] [data-obj="certificates"] .lift,
-.room-wrap[data-hl="videos"] [data-obj="videos"] .lift,
-.room-wrap[data-hl="experience"] [data-obj="experience"] .lift,
-.room-wrap[data-hl="contact"] [data-obj="contact"] .lift {
-  transform: translateY(-7px);
-  filter: drop-shadow(0 10px 6px rgba(122, 77, 50, 0.2));
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .obj {
-    animation: settle 720ms var(--ease) backwards;
-    animation-delay: calc(var(--i) * 70ms + 120ms);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .steam {
-    animation: steam 4s ease-in-out infinite;
-    transform-box: fill-box;
-    transform-origin: 50% 100%;
-  }
-}
-
-@keyframes steam {
-  0%, 100% {
-    opacity: 0.5;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-3px);
-  }
-}
-
-@keyframes settle {
-  from {
-    opacity: 0;
-    transform: translateY(-16px);
-  }
-}
-
-.room-chips {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.room-chips li {
-  position: absolute;
-  transform: translate(-50%, 4px);
-}
-
-.room-chips a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 3px 11px 3px 8px;
-  border: 1px solid var(--edge);
-  border-radius: var(--radius-pill);
-  background: #fff;
-  color: var(--ink);
-  font-family: var(--font-ui);
-  font-size: 12.5px;
-  line-height: 1.3;
-  text-decoration: none;
-  white-space: nowrap;
-  pointer-events: auto;
-  box-shadow: var(--shadow-sm);
-  transition: border-color 200ms var(--ease), background-color 200ms var(--ease);
-}
-
-.room-chips .i {
-  width: 14px;
-  height: 14px;
-  color: var(--accent);
-}
-
-.room-wrap[data-hl="topics"] [data-chip="topics"],
-.room-wrap[data-hl="campus"] [data-chip="campus"],
-.room-wrap[data-hl="courses"] [data-chip="courses"],
-.room-wrap[data-hl="certificates"] [data-chip="certificates"],
-.room-wrap[data-hl="videos"] [data-chip="videos"],
-.room-wrap[data-hl="experience"] [data-chip="experience"],
-.room-wrap[data-hl="contact"] [data-chip="contact"] {
-  border-color: var(--accent);
-  background: #fcf9f7;
-}
-
-.room-bar ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.room-bar .chip-link {
-  font-size: 14px;
-  padding: 6px 14px;
 }
 
 /* hero panels */
@@ -1528,12 +1395,31 @@ html[lang="th"] .contact-lead {
 /* ---------- responsive ---------- */
 
 @media (max-width: 1100px) {
-  .bar-nav {
-    display: none;
+  .bar {
+    flex-wrap: wrap;
+    row-gap: 8px;
   }
 
   .lang-toggle {
+    order: 1;
     margin-left: auto;
+  }
+
+  .bar-nav {
+    order: 2;
+    flex: 0 0 100%;
+    margin-left: 0;
+    padding-bottom: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .bar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bar-nav .chip-link {
+    flex: none;
   }
 }
 
@@ -1544,12 +1430,7 @@ html[lang="th"] .contact-lead {
   }
 
   .hero {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 520px);
-  }
-
-  .hero-panels {
-    grid-column: 1 / -1;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
   }
 
 }
@@ -1603,22 +1484,9 @@ html[lang="th"] .contact-lead {
     grid-template-columns: 1fr;
   }
 
-  .room-chips li {
-    transform: translate(-50%, 2px);
-  }
 
-  .room-chips a {
-    padding: 6px;
-  }
 
-  .room-chips a span {
-    display: none;
-  }
 
-  .room-chips .i {
-    width: 16px;
-    height: 16px;
-  }
 
   .btn-primary {
     width: 100%;
@@ -1651,9 +1519,6 @@ html[lang="th"] .contact-lead {
     rotate: 0deg;
   }
 
-  .room-bar .chip-link {
-    min-height: 44px;
-  }
 
   .lang-toggle button {
     min-height: 44px;
@@ -1707,7 +1572,7 @@ html[lang="th"] .contact-lead {
 .brand,
 .chip-link,
 .lang-toggle,
-.room-chips a,
+.chip-link,
 .card,
 .to-room,
 .topic-chips a {
@@ -1737,11 +1602,6 @@ html[lang="th"] .contact-lead {
 
 .btn-quiet:hover {
   background: rgba(255, 255, 255, 0.4);
-}
-
-.obj:hover .lift,
-.space-wrap[data-hl] .lift {
-  filter: none;
 }
 
 .bubble {
@@ -1878,4 +1738,25 @@ html[lang="th"] .contact-lead {
 .tv-feature .tv,
 .tv-grid .tv {
   background: transparent;
+}
+
+/* clean hero: profile on the left, three short panels on the right */
+
+.hero {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+
+.hero-panels {
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 }

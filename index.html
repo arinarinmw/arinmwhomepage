@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=IBM+Plex+Sans+Thai:wght@400;500&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="home.css?v=1792287479" />
+<link rel="stylesheet" href="home.css?v=1792288055" />
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -567,7 +567,7 @@
     apply(root.lang === 'th' ? 'th' : 'en');
   })();
 
-  /* collapsible sections: each main part can be folded away; links and the address hash open it */
+  /* collapsible sections: every main part starts folded; the button, the heading, menu links and the address hash open it */
   (function () {
     var parts = document.querySelectorAll('section.part');
     parts.forEach(function (part) {
@@ -582,7 +582,7 @@
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'part-toggle';
-      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-expanded', 'false');
       btn.setAttribute('aria-controls', body.id);
       if (h && h.id) btn.setAttribute('aria-labelledby', h.id);
       btn.innerHTML = '<svg class="i" aria-hidden="true"><use href="#i-chev"/></svg>';
@@ -598,6 +598,7 @@
         set(body.hidden);
       });
       part.__setOpen = set;
+      set(false);
     });
     window.__openPartFor = function (el) {
       var part = el && el.closest ? el.closest('section.part') : null;

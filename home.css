@@ -1889,3 +1889,7 @@ html[lang="th"] .contact-lead {
 .part.is-collapsed {
   padding-bottom: 0;
 }
+
+.part.is-collapsed .part-head {
+  padding-bottom: 4px;
+}

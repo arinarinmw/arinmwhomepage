@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Arin Muadthong | Speaker · Educator · Product &amp; Systems Thinker</title>
+<title>อรินจ์ หมวดทอง | วิทยากร · ผู้สอน · Product &amp; Systems Thinker</title>
 <script>
   (function () {
     try {
       var p = new URLSearchParams(location.search).get('lang');
       var l = (p === 'th' || p === 'en') ? p : localStorage.getItem('arinmw-lang');
-      if (l === 'th') document.documentElement.lang = 'th';
+      if (l === 'en') document.documentElement.lang = 'en';
     } catch (e) {}
   })();
 </script>
-<meta name="description" content="Arin Muadthong, speaker, educator, and product &amp; systems thinker. Turning complicated things into something easy to understand." />
+<meta name="description" content="อรินจ์ หมวดทอง วิทยากร ผู้สอน และ Product &amp; Systems Thinker เปลี่ยนเรื่องซับซ้อนให้กลายเป็นเรื่องที่เข้าใจง่าย" />
 <meta property="og:title" content="อรินจ์ หมวดทอง | Arin Muadthong" />
-<meta property="og:description" content="Speaker · Educator · Product &amp; Systems Thinker. Turning complicated things into something easy to understand." />
+<meta property="og:description" content="วิทยากร · ผู้สอน · Product &amp; Systems Thinker เปลี่ยนเรื่องซับซ้อนให้กลายเป็นเรื่องที่เข้าใจง่าย" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://arinmw.com/" />
 <meta property="og:image" content="https://arinmw.com/Media/og-image.png" />
@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=IBM+Plex+Sans+Thai:wght@400;500&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="home.css?v=1792494491" />
+<link rel="stylesheet" href="home.css?v=1792557376" />
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -135,7 +135,7 @@
     <div class="tile-band tile-band--thin" aria-hidden="true"></div>
 
     <!-- Speaking and training topics -->
-    <section class="part" id="speaking-topics" aria-labelledby="topics-heading" data-open>
+    <section class="part" id="speaking-topics" aria-labelledby="topics-heading">
       <div class="part-head">
         <span class="bubble"><svg class="i" aria-hidden="true"><use href="#i-board"/></svg></span>
         <h2 id="topics-heading"><span data-lang="en">Speaking &amp; Training Topics</span><span data-lang="th">หัวข้อบรรยายและอบรม</span></h2>
@@ -472,7 +472,7 @@
   (function () {
     var KEY = 'arinmw-lang';
     var root = document.documentElement;
-    var titles = { en: document.title, th: 'อรินจ์ หมวดทอง | วิทยากร · ผู้สอน · Product & Systems Thinker' };
+    var titles = { en: 'Arin Muadthong | Speaker · Educator · Product & Systems Thinker', th: document.title };
     var attrs = ['alt', 'aria-label'];
     var translatable = document.querySelectorAll('[data-alt-th], [data-aria-label-th]');
     translatable.forEach(function (el) {
@@ -499,10 +499,10 @@
         try { localStorage.setItem(KEY, b.dataset.setLang); } catch (e) {}
       });
     });
-    apply(root.lang === 'th' ? 'th' : 'en');
+    apply(root.lang === 'en' ? 'en' : 'th');
   })();
 
-  /* collapsible sections: main parts start folded (except one marked data-open); the button, the heading, menu links and the address hash open it */
+  /* collapsible sections: every main part starts open (add data-closed to a part to start it folded); the button, the heading, menu links and the address hash open it */
   (function () {
     var parts = document.querySelectorAll('section.part');
     parts.forEach(function (part) {
@@ -533,7 +533,7 @@
         set(body.hidden);
       });
       part.__setOpen = set;
-      set(part.hasAttribute('data-open'));
+      set(!part.hasAttribute('data-closed'));
     });
     window.__openPartFor = function (el) {
       var part = el && el.closest ? el.closest('section.part') : null;
